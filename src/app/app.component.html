@@ -1,0 +1,38 @@
+<!-- Navbar Desktop -->
+<div class="navbar navbar-desktop" id="navbar" *ngIf="!isMobile">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <a routerLink="/produtos">Todos os Produtos</a>
+    </div>
+    <div class="navbar-logo-center">
+      <a href="/" class="navbar-logo">
+        <img src="img/logo.svg" alt="Logo Loja IOS" class="logo-svg">
+      </a>
+    </div>
+    
+    <div class="navbar-right">
+      <a routerLink="/conecta" class="icon">Entre ou cadastre-se</a>
+      <a routerLink="/carrinho" class="icon"> <img src="img/carrinho-logo.png" alt="Carrinho" class="carrinho-logo"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar Mobile -->
+<div class="navbar navbar-mobile" *ngIf="isMobile">
+  <div class="navbar-container">
+    <a routerLink="/" class="navbar-logo-mobile">E-Shop</a>
+    <button class="hamburger" (click)="toggleMenu()">☰</button>
+  </div>
+</div>
+
+<!-- Sidebar Mobile -->
+<div class="sidebar" [class.active]="menuActive">
+  <button class="close-btn" (click)="toggleMenu()">×</button>
+  <div class="sidebar-links">
+    <a routerLink="/produtos" (click)="closeMenu()">Todos os Produtos</a>
+    <a routerLink="/carrinho" (click)="closeMenu()">Carrinho</a>
+    <a routerLink="/login" (click)="closeMenu()">Minha Conta</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

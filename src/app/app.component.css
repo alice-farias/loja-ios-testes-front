@@ -1,0 +1,215 @@
+/* Estilo básico */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar Desktop */
+.navbar-desktop {
+  position: fixed;
+  top: -100px; /* Oculta inicialmente */
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #7a57d1, #a06bdc);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.navbar-desktop.visible {
+  top: 0; /* Exibe ao rolar */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-left a,
+.navbar-right a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-left a:hover,
+.navbar-right a:hover {
+  background-color: #e0c3fc;
+  transform: scale(1.1);
+}
+
+.navbar-logo-center .navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo-center .navbar-logo:hover {
+  color: #ffeb3b;
+}
+
+/* Navbar Mobile */
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #7a57d1, #a06bdc);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar-logo-mobile {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  display: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -2000px;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(180deg, #7a57d1, #ff87dc);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.sidebar.active {
+  right: 0; /* Exibe ao ser ativada */
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  background-color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+.close-btn {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Animações */
+.navbar-desktop,
+.navbar-mobile {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-desktop:hover,
+.navbar-mobile:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .navbar-desktop {
+    display: none; /* Oculta a navbar desktop em telas menores */
+  }
+
+  .navbar-mobile {
+    display: flex; /* Exibe a navbar mobile */
+  }
+
+  .hamburger {
+    display: block; /* Exibe o hambúrguer */
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar-mobile {
+    display: none; /* Oculta a navbar mobile em telas grandes */
+  }
+
+  .navbar-desktop {
+    display: block; /* Exibe a navbar desktop */
+  }
+}
+
+.logo-svg {
+  height: 40px; /* Ajuste o tamanho conforme necessário */
+  width: auto;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo-svg:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.carrinho-logo {
+  height: 25px; 
+  width: auto;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.carrinho-logo:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.login-logo {
+  height: 25px; 
+  width: auto;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.login-logo:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}

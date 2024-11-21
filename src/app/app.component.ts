@@ -50,5 +50,7 @@ export class AppComponent implements OnInit {
     } else {
       navbar?.classList.remove('visible'); // Esconde a navbar ao voltar para o topo
     }
+
+    
   }
 }

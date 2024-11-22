@@ -43,3 +43,47 @@
     transform: translateY(0); /* Retorna ao estado inicial */
   }
 }
+
+
+
+/* faixa que roda */
+
+
+.container-faixa {
+  width: 100%;
+  background-color: #7faece;
+  padding: 10px 0;
+  border: solid 5px rgb(250, 200, 36);
+}
+.rotating-banner {
+  width: 100%;
+  overflow: hidden;
+  color: #000;
+  position: relative;
+  box-sizing: border-box;
+}
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scroll 20s linear infinite;
+  font-family: 'Roboto flex';
+  font-weight: 500;
+}
+.banner-content span, .banner-content img {
+  white-space: nowrap;
+  margin: 0 20px;
+  font-size: 1.2em;
+}
+.banner-content img {
+  height: 40px; 
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

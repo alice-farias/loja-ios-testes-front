@@ -1,0 +1,22 @@
+.c-border {
+    background-color: rgb(212, 178, 23);
+    background-image: url(../../../public/img/onca.png);
+    background-position: 50%;
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    border: 3px solid #000;
+    border-radius: 6px;
+    height: 27px;
+    margin-top: 3%;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #49176d;
+  }
+
+  /* teste produtos */
+
+  

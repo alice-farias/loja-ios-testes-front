@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './lancamento.component.css'
 })
 export class LancamentoComponent {
+  hovered: boolean[] = [false, false, false, false];
 
+  onHover(index: number, state: boolean) {
+    this.hovered[index] = state;
+  }
 }

@@ -9,6 +9,8 @@
   align-items: center;
   height: 100vh;
   background-color: #49176d;
+  position: relative;
+  overflow: hidden; /* Previne o scroll horizontal */
 }
 
 .word {
@@ -22,11 +24,58 @@
 
 .letter {
   display: inline-block;
-  transition: transform 0.3s ease; /* Transição suave para o efeito hover */
+  transition: transform 0.3s ease;
+  animation: dance 0.8s ease-out forwards;
+}
+
+@keyframes dance {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.letter:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.letter:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.letter:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.letter:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.letter:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.letter:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.letter:nth-child(7) {
+  animation-delay: 0.6s;
 }
 
 .letter:hover {
-  animation: bounce 1s ease; /* Animação de queda e subida apenas no hover */
+  animation: bounce 1s ease;
 }
 
 @keyframes bounce {
@@ -34,27 +83,23 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-60px); /* A letra sobe */
+    transform: translateY(-60px);
   }
   75% {
-    transform: translateY(40px); /* A letra desce um pouco para simular a queda */
+    transform: translateY(40px);
   }
   100% {
-    transform: translateY(0); /* Retorna ao estado inicial */
+    transform: translateY(0);
   }
 }
-
-
-
-/* faixa que roda */
-
 
 .container-faixa {
   width: 100%;
   background-color: #7faece;
   padding: 10px 0;
-  border: solid 5px rgb(250, 200, 36);
+  border: solid 7px #f4a410;
 }
+
 .rotating-banner {
   width: 100%;
   overflow: hidden;
@@ -62,6 +107,7 @@
   position: relative;
   box-sizing: border-box;
 }
+
 .banner-content {
   display: flex;
   align-items: center;
@@ -70,14 +116,17 @@
   font-family: 'Roboto flex';
   font-weight: 500;
 }
+
 .banner-content span, .banner-content img {
   white-space: nowrap;
   margin: 0 20px;
   font-size: 1.2em;
 }
+
 .banner-content img {
-  height: 40px; 
+  height: 40px;
 }
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -87,3 +136,122 @@
   }
 }
 
+.bichinho-piscando {
+  width: 6rem;
+  padding: 0;
+}
+
+.canto-esquerdo {
+  position: absolute;
+  bottom: -7rem;
+  left: -10rem;
+  width: 20rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1.5s ease-out forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.canto-direito {
+  position: absolute;
+  top: -7rem;
+  right: -10rem;
+  width: 20rem;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: aparecer-direito 1.5s ease-out forwards;
+}
+
+@keyframes aparecer-direito {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade para telas menores */
+
+/* Para tablets em modo paisagem */
+@media (max-width: 1024px) {
+  .word {
+    font-size: 6rem; /* Diminui o tamanho da fonte */
+  }
+
+  .letter {
+    font-size: 5rem; /* Ajusta o tamanho das letras */
+  }
+
+  .canto-esquerdo, .canto-direito {
+    width: 15rem; /* Diminui o tamanho do SVG */
+    left: -5rem; /* Ajusta a posição do canto-esquerdo */
+    right: -5rem; /* Ajusta a posição do canto-direito */
+  }
+
+  .banner-content {
+    font-size: 1em; /* Ajusta o tamanho da fonte do banner */
+  }
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Alinha os elementos em coluna */
+  }
+
+  .word {
+    font-size: 4rem; /* Reduz o tamanho da fonte */
+  }
+
+  .letter {
+    font-size: 3rem; /* Ajusta o tamanho das letras */
+  }
+
+  .canto-esquerdo, .canto-direito {
+    width: 12rem; /* Diminui o tamanho do SVG */
+    left: -4rem; /* Ajusta a posição do canto-esquerdo */
+    right: -4rem; /* Ajusta a posição do canto-direito */
+  }
+
+  .banner-content {
+    font-size: 0.9em; /* Ajusta o tamanho da fonte do banner */
+  }
+
+  .bichinho-piscando {
+    width: 4rem; /* Ajusta o tamanho do bichinho piscando */
+  }
+}
+
+/* Para dispositivos muito pequenos, como celulares em modo retrato */
+@media (max-width: 480px) {
+  .word {
+    font-size: 3rem; /* Reduz ainda mais o tamanho da fonte */
+  }
+
+  .letter {
+    font-size: 2.5rem; /* Ajusta o tamanho das letras */
+  }
+
+  .canto-esquerdo, .canto-direito {
+    width: 10rem; /* Diminui o tamanho do SVG */
+    left: -3rem; /* Ajusta a posição do canto-esquerdo */
+    right: -3rem; /* Ajusta a posição do canto-direito */
+  }
+
+  .banner-content {
+    font-size: 0.8em; /* Ajusta o tamanho da fonte do banner */
+  }
+}

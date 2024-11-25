@@ -2,7 +2,10 @@
 /* cards de itens */
 
 .container-card {
-
+  display: flex; /* Usa flexbox para o card se expandir e preencher o espaço disponível */
+  flex-direction: column; /* Os itens dentro do card devem ser empilhados na vertical */
+  justify-content: space-between; /* Alinha o conteúdo verticalmente */
+  height: 100%; /* Faz com que todos os cards tenham a mesma altura */
 }
   
   .card {
@@ -11,15 +14,18 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: transform 0.3s;
+    height: 100%; /* Garantir que o card ocupe toda a altura disponível */
   }
 
-.centralizar{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center; /*Alinhar na tela*/
-    flex-wrap: wrap; /*Os cards se auste as linhas*/
+.centralizar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    column-gap: 4;/* Quatro colunas de tamanho igual */
+    gap: 1rem; /* Espaçamento entre os cards */
+    justify-items: center; /* Alinha os cards horizontalmente no centro */
+    align-items: center; /* Alinha os cards verticalmente no centro */
     margin-top: 4rem;
+    grid-auto-rows: 1fr; /* As linhas terão a mesma altura */
 }
   
   .card:hover {

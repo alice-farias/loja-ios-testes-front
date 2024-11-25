@@ -1,0 +1,151 @@
+
+.avaliacao {
+    background-color: white;
+    padding:20px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px 10px rgba(85, 3, 81, 0.1);
+    text-align: center;
+    margin-top: 200px;  
+    margin-bottom: 80px;
+}
+
+img {
+  width: 150px;      
+  height: 150px;     
+  border-radius: 100%; 
+  margin-top: -80px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+}
+
+h4{
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(124, 117, 117);
+}
+
+p{
+  font-family: 'Roboto', sans-serif;
+} 
+
+/* Esconde os inputs de radio */
+.avaliacao input[type="radio"] {
+  display: none; /* Remove visualização dos inputs */
+}
+
+/* Estilo das estrelas */
+.avaliacao .estrela {
+  font-size: 40px;
+  color: #7c3866;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* começa */
+.carousel-container {
+  position: relative;
+  max-width: 60%;
+  margin: auto;
+  overflow: hidden;
+}
+  
+.carousel-slide {
+  display: flex;
+  justify-content: center; 
+}
+
+
+/* Botão */
+  
+.prev, .next {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Compensa o 50% para alinhamento perfeito */
+  background-color: rgba(202, 120, 184, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 500;
+  border-radius: 50%;
+}
+  
+.prev {
+  left: 0;
+}
+  
+.next {
+  right: 0;
+}
+  
+.prev:hover, .next:hover {
+  background-color: rgba(131, 32, 109, 0.7);
+}
+  
+
+.avaliacao {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: space-between; /* Aplica espaçamento igual entre todos os items */
+}
+
+.avaliacao {
+  margin-right: 29px;
+  margin-left: 31px; /* Valor de espaçamento entre os itens */
+}
+
+@media (max-width: 768px) {
+  
+.carousel-container {
+  max-width: 90%;  /* Ampliando para 90% da largura da tela */
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Ajusta o tamanho das imagens */
+img {
+  width: 120px;  /* Menor imagem no mobile */
+  height: 120px;
+}
+
+.avaliacao {
+  margin-right: 1px;
+  margin-left: 3px; /* Valor de espaçamento entre os itens */
+}
+
+/* Ajusta o texto das avaliações */
+h2 {
+  font-size: 18px; /* Reduz o tamanho do título */
+}
+  
+h4 {
+  font-size: 14px; /* Reduz o tamanho da data */
+}
+  
+p {
+  font-size: 16px; /* Reduz o tamanho do comentário */
+}
+
+}
+
+
+
+  

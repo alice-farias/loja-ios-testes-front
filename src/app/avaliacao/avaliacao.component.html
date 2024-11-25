@@ -1,0 +1,30 @@
+<div *ngIf="slides.length > 0" class="carousel-container">
+    <button class="prev" (click)="prev()">&#10094;</button>
+  
+    <div class="carousel-slide" [ngStyle]="{'transform': transform}">
+        <div class="avaliacao" *ngFor="let slide of slides; let i = index" [ngClass]="{'carousel-item': true}">
+            <img [src]="slide.img" [alt]="slide.alt">
+            <h2>{{slide.name}}</h2>
+            <input type="radio" id="estrela1" name="avaliacao{{i}}" value="1">
+            <label for="estrela1" class="estrela">&#9733;</label>
+  
+            <input type="radio" id="estrela2" name="avaliacao{{i}}" value="2">
+            <label for="estrela2" class="estrela">&#9733;</label>
+  
+            <input type="radio" id="estrela3" name="avaliacao{{i}}" value="3">
+            <label for="estrela3" class="estrela">&#9733;</label>
+  
+            <input type="radio" id="estrela4" name="avaliacao{{i}}" value="4">
+            <label for="estrela4" class="estrela">&#9733;</label>
+  
+            <input type="radio" id="estrela5" name="avaliacao{{i}}" value="5">
+            <label for="estrela5" class="estrela">&#9733;</label>
+  
+            <h4>{{slide.date}}</h4>
+            <p>{{slide.comment}}</p>
+        </div>
+    </div>
+  
+    <button class="next" (click)="next()">&#10095;</button>
+  </div>
+  

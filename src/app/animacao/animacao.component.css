@@ -79,7 +79,7 @@
 .rotating-banner {
   width: 100%;
   overflow: hidden;
-  color: #000;
+  color: black;
   position: relative;
   box-sizing: border-box;
 }

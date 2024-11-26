@@ -21,7 +21,7 @@
   justify-content: center; /* Centraliza os produtos em telas menores */
   gap: 20px; /* Espaçamento entre os produtos */
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #f2e2f5;
   font-family: 'Roboto';
 
 }

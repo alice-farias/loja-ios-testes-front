@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Titan+One&display=swap');
 
-.container {
+
+
+/* Container principal */
+.container-animacao {
   text-align: center;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Ocupa 100% da altura da viewport */
   background-color: #49176d;
   position: relative;
-  overflow: hidden; /* Previne o scroll horizontal */
+  overflow: hidden;
 }
 
+/* Texto animado */
 .word {
   font-family: 'Titan One';
   font-size: 8rem;
@@ -44,34 +48,6 @@
   100% {
     transform: translateY(0);
   }
-}
-
-.letter:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.letter:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.letter:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.letter:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.letter:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.letter:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-.letter:nth-child(7) {
-  animation-delay: 0.6s;
 }
 
 .letter:hover {
@@ -141,6 +117,7 @@
   padding: 0;
 }
 
+
 .canto-esquerdo {
   position: absolute;
   bottom: -7rem;
@@ -149,6 +126,16 @@
   opacity: 0;
   transform: translateY(20px);
   animation: aparecer 1.5s ease-out forwards;
+}
+
+.canto-direito {
+  position: absolute;
+  top: -7rem;
+  right: -10rem;
+  width: 20rem;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: aparecer-direito 1.5s ease-out forwards;
 }
 
 @keyframes aparecer {
@@ -162,16 +149,6 @@
   }
 }
 
-.canto-direito {
-  position: absolute;
-  top: -7rem;
-  right: -10rem;
-  width: 20rem;
-  opacity: 0;
-  transform: translateX(20px);
-  animation: aparecer-direito 1.5s ease-out forwards;
-}
-
 @keyframes aparecer-direito {
   0% {
     opacity: 0;
@@ -183,75 +160,36 @@
   }
 }
 
-/* Responsividade para telas menores */
-
-/* Para tablets em modo paisagem */
+/* Responsividade */
 @media (max-width: 1024px) {
   .word {
-    font-size: 6rem; /* Diminui o tamanho da fonte */
+    font-size: 6rem;
   }
-
-  .letter {
-    font-size: 5rem; /* Ajusta o tamanho das letras */
-  }
-
   .canto-esquerdo, .canto-direito {
-    width: 15rem; /* Diminui o tamanho do SVG */
-    left: -5rem; /* Ajusta a posição do canto-esquerdo */
-    right: -5rem; /* Ajusta a posição do canto-direito */
-  }
-
-  .banner-content {
-    font-size: 1em; /* Ajusta o tamanho da fonte do banner */
+    width: 15rem;
   }
 }
 
-/* Para dispositivos móveis */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Alinha os elementos em coluna */
-  }
-
   .word {
-    font-size: 4rem; /* Reduz o tamanho da fonte */
+    font-size: 4rem;
   }
-
-  .letter {
-    font-size: 3rem; /* Ajusta o tamanho das letras */
-  }
-
   .canto-esquerdo, .canto-direito {
-    width: 12rem; /* Diminui o tamanho do SVG */
-    left: -4rem; /* Ajusta a posição do canto-esquerdo */
-    right: -4rem; /* Ajusta a posição do canto-direito */
+    width: 12rem;
   }
-
-  .banner-content {
-    font-size: 0.9em; /* Ajusta o tamanho da fonte do banner */
-  }
-
   .bichinho-piscando {
-    width: 4rem; /* Ajusta o tamanho do bichinho piscando */
+    width: 4rem;
   }
 }
 
-/* Para dispositivos muito pequenos, como celulares em modo retrato */
 @media (max-width: 480px) {
   .word {
-    font-size: 3rem; /* Reduz ainda mais o tamanho da fonte */
+    font-size: 3rem;
   }
-
-  .letter {
-    font-size: 2.5rem; /* Ajusta o tamanho das letras */
-  }
-
   .canto-esquerdo, .canto-direito {
-    width: 10rem; /* Diminui o tamanho do SVG */
-    left: -3rem; /* Ajusta a posição do canto-esquerdo */
-    right: -3rem; /* Ajusta a posição do canto-direito */
+    width: 10rem;
   }
-
   .banner-content {
-    font-size: 0.8em; /* Ajusta o tamanho da fonte do banner */
+    font-size: 0.8em;
   }
 }
